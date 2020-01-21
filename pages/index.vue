@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    HELLO WORLD
+    HELLO WORLD ->
+    <strong> HELLO WORLD -> </strong>
+    <i> HELLO WORLD -> </i>
   </div>
 </template>
 
@@ -12,6 +14,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
+  max-width: 1230px;
+  @apply w-full mx-auto px-5;
 }
 </style>

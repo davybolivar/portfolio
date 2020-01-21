@@ -1,0 +1,29 @@
+/* font-family: 'JetBrainsMono-Regular.ttf' */
+@font-face {
+  font-family: 'JetbrainsMono';
+  src: url('./JetBrainsMono-Regular.ttf');
+  src: url('./JetBrainsMono-Regular.ttf?#iefix')format('embedded-opentype'),
+    url('./JetBrainsMono-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* font-family: 'JetBrainsMono-Bold.ttf' */
+@font-face {
+  font-family: 'JetbrainsMono';
+  src: url('./JetBrainsMono-Bold.ttf');
+  src: url('./JetBrainsMono-Bold.ttf?#iefix')format('embedded-opentype'),
+    url('./JetBrainsMono-Bold.ttf') format('truetype');
+  font-style: bolder;
+  font-weight: 700;
+}
+
+/* font-family: 'JetBrainsMono-Italic.ttf' */
+@font-face {
+  font-family: 'JetbrainsMono';
+  src: url('./JetBrainsMono-Italic.ttf');
+  src: url('./JetBrainsMono-Italic.ttf?#iefix')format('embedded-opentype'),
+    url('./JetBrainsMono-Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+}
