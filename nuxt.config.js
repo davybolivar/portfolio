@@ -1,5 +1,13 @@
+import { join } from 'path'
+
 export default {
   mode: 'universal',
+  head: {
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    ]
+  },
   /*
    ** Customize the progress-bar color
    */
@@ -42,6 +50,11 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {},
+    postcss: {
+      plugins: {
+        tailwindcss: join(__dirname, 'tailwind.config.js')
+      }
+    }
   }
 }

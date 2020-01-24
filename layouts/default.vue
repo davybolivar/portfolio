@@ -1,8 +1,22 @@
 <template>
   <div>
+    <headerComponent />
     <nuxt />
+    <footerComponent />
   </div>
 </template>
+
+<script>
+import headerComponent from '~/components/header.vue'
+import footerComponent from '~/components/footer.vue'
+
+export default {
+  components: {
+    headerComponent,
+    footerComponent
+  }
+}
+</script>
 
 <style>
 html {
@@ -15,10 +29,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  color: #ffff;
   background-color: #1a1b1e;
 
-  @apply text-base;
+  @apply tw-text-base tw-text-white tw-px-5;
 }
 
 *,
