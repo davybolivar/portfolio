@@ -9,13 +9,23 @@ export default {
     ]
   },
   /*
+   ** Environment variables
+   */
+  env: {
+    githubUrl: process.env.GITHUB_URL || 'https://github.com/davybolivar',
+    linkedinUrl:
+      process.env.LINKEDIN_URL || 'https://www.linkedin.com/in/davybolivar',
+    dribbbleUrl: process.env.DRIBBBLE_URL || 'https://dribbble.com/davybolivar',
+    itchUrl: process.env.ITCH_URL || 'https://supernaught.itch.io/'
+  },
+  /*
    ** Customize the progress-bar color
    */
   loading: { color: '#fff' },
   /*
    ** Global CSS
    */
-  css: ['~/assets/fonts/jetbrainsmono.css'],
+  css: ['~/assets/fonts/jetbrainsmono.css', '~/assets/icons/icons.css'],
   /*
    ** Plugins to load before mounting the App
    */

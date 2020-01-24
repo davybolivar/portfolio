@@ -41,32 +41,35 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+p > a {
+  @apply tw-text-purple-500 tw-no-underline tw-cursor-pointer;
+  @screen md {
+    &:hover {
+      @apply tw-underline tw-text-purple-600;
+    }
+  }
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+p {
+  @apply tw-mt-5 tw-leading-loose;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+.icon {
+  @apply tw-text-3xl;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.base-h1 {
+  @apply tw-text-4xl tw-font-bold tw-tracking-wide;
+  @screen md {
+    @apply tw-text-5xl;
+  }
+}
+
+.base-h2 {
+  @apply tw-text-3xl tw-font-bold tw-tracking-wide;
+}
+
+.base-h3 {
+  @apply tw-text-2xl tw-tracking-wide;
 }
 </style>
