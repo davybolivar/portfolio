@@ -39,8 +39,16 @@ export default {
   @apply tw-bg-indigo-500 tw-py-3 tw-px-6 tw-text-sm tw-leading-none tw-rounded-sm tw-flex tw-justify-center tw-items-center tw-font-bold tw-outline-none;
   transition: 0.1s color ease-in, 0.1s background-color ease-in;
 
+  &:hover {
+    @apply tw-bg-indigo-600;
+  }
+
   &--disabled {
     @apply tw-bg-gray-500 tw-cursor-not-allowed tw-text-gray-200;
+
+    &:hover {
+      @apply tw-bg-gray-600;
+    }
   }
 
   &__spinner {
