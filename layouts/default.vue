@@ -120,4 +120,18 @@ p {
     }
   }
 }
+
+.fade-up-enter-active {
+  transition: all 0.2s ease;
+}
+
+.fade-up-leave-active {
+  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.fade-up-enter,
+.fade-up-leave-to {
+  transform: translateY(10px);
+  opacity: 0;
+}
 </style>
