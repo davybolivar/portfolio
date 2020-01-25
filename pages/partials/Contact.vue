@@ -16,8 +16,31 @@
         />
       </div>
       <div class="contact__form">
-        <form @submit.prevent="submit" class="tw-mt-6 md:tw-mt-0">
-          <v-button :loading="loading" class="tw-w-full">
+        <form @submit.prevent="submit" class="tw-mt-6 md:tw-mt-0 tw-w-full">
+          <v-input
+            v-model="form.name"
+            :disabled="loading"
+            type="text"
+            label="FULL NAME"
+            placeholder="John Doe"
+          />
+          <v-input
+            v-model="form.email"
+            :disabled="loading"
+            type="email"
+            label="EMAIL"
+            placeholder="john.doe@gmail.com"
+            class="tw-mt-6"
+          />
+          <v-input
+            v-model="form.message"
+            :disabled="loading"
+            type="textarea"
+            label="MESSAGE"
+            placeholder="Hello world..."
+            class="tw-mt-6"
+          />
+          <v-button :loading="loading" class="tw-w-full tw-mt-16">
             <transition name="fade-up" mode="out-in">
               <span :key="loading">
                 {{ loading ? 'SENDING...' : 'SEND MESSAGE ->' }}
@@ -32,17 +55,25 @@
 
 <script>
 import Button from '~/components/button'
+import Input from '~/components/input'
 
 export default {
   name: 'Contact',
 
   components: {
-    'v-button': Button
+    'v-button': Button,
+    'v-input': Input
   },
 
   data() {
     return {
-      loading: false
+      loading: false,
+
+      form: {
+        name: '',
+        email: '',
+        message: ''
+      }
     }
   },
 
@@ -71,6 +102,7 @@ export default {
 
   &__statement {
     @screen md {
+      @apply tw-mt-10;
       grid-area: statement;
     }
   }
@@ -85,6 +117,8 @@ export default {
   }
 
   &__form {
+    @apply tw-flex tw-items-center;
+
     @screen md {
       grid-area: form;
     }

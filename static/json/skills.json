@@ -14,5 +14,9 @@
   {
     "name": "CMS",
     "types": ["Gatsby", "Netlify", "Wordpress"]
+  },
+  {
+    "name": "UI LIBRARIES",
+    "types": ["ElementUI", "Ant Design", "SemanticUI", "Bootstrap"]
   }
 ]
