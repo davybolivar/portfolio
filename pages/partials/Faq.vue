@@ -75,7 +75,7 @@ export default {
   }
 
   &__answer {
-    @apply tw-text-purple-500 tw-tracking-wide;
+    @apply tw-text-purple-500 tw-tracking-wide tw-leading-loose;
   }
 
   &__more {

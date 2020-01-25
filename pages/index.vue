@@ -3,7 +3,10 @@
     <HeroSection class="container__hero" />
     <AboutSection class="container__content container__about" />
     <FaqSection class="container__content container__faq" />
-    <SkillsSection class="container__content container__skills" />
+    <SkillsSection
+      :skills="SkillsData"
+      class="container__content container__skills"
+    />
     <ContactSection class="container__content container__contact" />
   </main>
 </template>
@@ -15,6 +18,8 @@ import HeroSection from '~/pages/partials/Hero'
 import SkillsSection from '~/pages/partials/Skills'
 import FaqSection from '~/pages/partials/Faq'
 
+import SkillsData from '~/static/json/skills'
+
 export default {
   components: {
     AboutSection,
@@ -22,6 +27,12 @@ export default {
     FaqSection,
     ContactSection,
     SkillsSection
+  },
+
+  data() {
+    return {
+      SkillsData
+    }
   }
 }
 </script>
