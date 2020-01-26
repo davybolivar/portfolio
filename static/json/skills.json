@@ -1,22 +1,38 @@
-[
-  {
-    "name": "JAVASCRIPT",
-    "types": ["Vanilla JS", "Vue", "React", "Vuex", "Redux", "JQuery"]
-  },
-  {
-    "name": "CSS",
-    "types": ["BEM", "SMACSS", "Atomic", "Tailwind"]
-  },
-  {
-    "name": "HTML",
-    "types": ["Pug", "EJS"]
-  },
-  {
-    "name": "CMS",
-    "types": ["Gatsby", "Netlify", "Wordpress"]
-  },
-  {
-    "name": "UI LIBRARIES",
-    "types": ["ElementUI", "Ant Design", "SemanticUI", "Bootstrap"]
-  }
-]
+{
+  "code": [
+    {
+      "name": "JAVASCRIPT",
+      "types": ["Vanilla JS", "Vue", "React", "Vuex", "Redux", "JQuery", "Single-spa"]
+    },
+    {
+      "name": "CSS",
+      "types": ["BEM", "SMACSS", "Atomic", "Tailwind"]
+    },
+    {
+      "name": "HTML",
+      "types": ["Pug", "EJS"]
+    },
+    {
+      "name": "CMS",
+      "types": ["Gatsby", "Netlify", "Wordpress"]
+    },
+    {
+      "name": "UI LIBRARIES",
+      "types": ["ElementUI", "Ant Design", "SemanticUI", "Bootstrap"]
+    },
+    {
+      "name": "TOOLS",
+      "types": ["VIM", "Sublime Text", "VS Code", "Atom"]
+    }
+  ],
+  "design": [
+    {
+      "name": "DESIGN SOFTWARES",
+      "types": ["Photoshop", "Illustrator", "Adobe XD"]
+    },
+    {
+      "name": "PIXEL ART",
+      "types": ["Pyxel Edit", "Aseprite"]
+    }
+  ]
+}

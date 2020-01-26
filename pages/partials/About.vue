@@ -10,16 +10,16 @@
     <p>I'm currently residing in Cebu, Philippines.</p>
     <div class="socials">
       <a :href="githubUrl" class="socials__item" target="_">
-        <i class="icon icon-github-alt"></i>
+        <i class="socials__icon icon icon-github-alt"></i>
       </a>
       <a :href="linkedinUrl" class="socials__item" target="_">
-        <i class="icon icon-linkedin"></i>
+        <i class="socials__icon icon icon-linkedin"></i>
       </a>
       <a :href="dribbbleUrl" class="socials__item" target="_">
-        <i class="icon icon-dribbble"></i>
+        <i class="socials__icon icon icon-dribbble"></i>
       </a>
       <a :href="itchUrl" class="socials__item" target="_">
-        <i class="icon icon-itch"></i>
+        <i class="socials__icon icon icon-itch"></i>
       </a>
     </div>
   </section>
@@ -48,6 +48,10 @@ export default {
 <style lang="scss" scoped>
 .socials {
   @apply tw-mt-10;
+
+  &__icon {
+    @apply tw-text-3xl;
+  }
 
   &__item {
     @apply tw-mr-4 tw-inline-block tw-text-purple-500 tw-cursor-pointer;

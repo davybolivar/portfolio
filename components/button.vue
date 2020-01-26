@@ -53,7 +53,7 @@ export default {
 
   &__spinner {
     @apply tw-mr-2;
-    animation: spin 1s linear infinite;
+    animation: spin 1s ease infinite;
   }
 
   @keyframes spin {
@@ -61,7 +61,7 @@ export default {
       transform: rotate(0);
     }
 
-    70%,
+    80%,
     100% {
       transform: rotate(180deg);
     }

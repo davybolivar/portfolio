@@ -50,12 +50,13 @@ p > a {
   }
 }
 
-p {
-  @apply tw-mt-5 tw-leading-loose tw-text-base;
+mark {
+  @apply tw-text-red-500;
+  background: none;
 }
 
-.icon {
-  @apply tw-text-3xl;
+p {
+  @apply tw-mt-5 tw-leading-loose tw-text-base;
 }
 
 .base-h1 {

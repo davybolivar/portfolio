@@ -80,7 +80,6 @@ export default {
   methods: {
     submit() {
       this.loading = true
-      console.log('SUBMIT MESSAGE BRO!')
     }
   }
 }
