@@ -22,23 +22,27 @@
       </div>
     </div>
     <div class="tw-mt-5">
-      <ol v-if="filterList.length" class="base-list base-list--ordered">
-        <li v-for="skill in filterList">
-          <span v-html="highlightText(skill.name, filter)"></span>
-          <ul v-if="skill.types && skill.types.length">
-            <li
-              v-for="type in skill.types"
-              v-html="highlightText(type, filter)"
-            ></li>
-          </ul>
-        </li>
-      </ol>
-      <div v-else>
-        <span class="tw-text-lg tw-text-gray-400">
-          Oopsie, I don't seem to know
-          <i class="tw-text-red-500">"{{ filter }}"</i>...
-        </span>
-      </div>
+      <transition name="fade-up" mode="out-in">
+        <div :key="category">
+          <ol v-if="filterList.length" class="base-list base-list--ordered">
+            <li v-for="skill in filterList">
+              <span v-html="highlightText(skill.name, filter)"></span>
+              <ul v-if="skill.types && skill.types.length">
+                <li
+                  v-for="type in skill.types"
+                  v-html="highlightText(type, filter)"
+                ></li>
+              </ul>
+            </li>
+          </ol>
+          <div v-else>
+            <span class="tw-text-lg tw-text-gray-400">
+              Oopsie, I don't seem to know
+              <i class="tw-text-purple-500">"{{ filter }}"</i>...
+            </span>
+          </div>
+        </div>
+      </transition>
     </div>
   </section>
 </template>
@@ -72,14 +76,15 @@ export default {
 
   computed: {
     filterList() {
-      const sanitizedFilter = this.$sanitize(this.filter)
+      const sanitizedFilter = this.$sanitize(this.filter).toLowerCase()
       const selectedCategory = this.skills[this.category]
       return sanitizedFilter
         ? selectedCategory.filter((s) => {
-            const filter = new RegExp(sanitizedFilter, 'i')
             return (
-              s.name.match(filter) ||
-              this.$sanitize(s.types.join('')).match(filter)
+              s.name.toLowerCase().includes(sanitizedFilter) ||
+              this.$sanitize(s.types.join('').toLowerCase()).includes(
+                sanitizedFilter
+              )
             )
           })
         : selectedCategory

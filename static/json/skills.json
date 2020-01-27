@@ -2,11 +2,11 @@
   "code": [
     {
       "name": "JAVASCRIPT",
-      "types": ["Vanilla JS", "Vue", "React", "Vuex", "Redux", "JQuery", "Single-spa"]
+      "types": ["ES6+", "Vue", "React", "Vuex", "Redux", "JQuery", "Single-spa", "Node.js"]
     },
     {
       "name": "CSS",
-      "types": ["BEM", "SMACSS", "Atomic", "Tailwind"]
+      "types": ["SCSS", "LESS", "BEM", "SMACSS", "Atomic"]
     },
     {
       "name": "HTML",
@@ -18,7 +18,7 @@
     },
     {
       "name": "UI LIBRARIES",
-      "types": ["ElementUI", "Ant Design", "SemanticUI", "Bootstrap"]
+      "types": ["Tailwind", "ElementUI", "Ant Design", "SemanticUI", "Bootstrap"]
     },
     {
       "name": "TOOLS",

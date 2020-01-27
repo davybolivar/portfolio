@@ -79,7 +79,7 @@ export default {
   @apply tw-w-full;
 
   &__label {
-    @apply tw-mb-2 tw-w-full tw-block;
+    @apply tw-mb-2 tw-w-full tw-block tw-text-purple-500;
   }
 
   &__container {
@@ -91,20 +91,20 @@ export default {
   }
 
   &__field {
-    @apply tw-w-full tw-outline-none tw-bg-purple-900 tw-p-2 tw-text-base tw-rounded-sm tw-border tw-border-indigo-500;
+    @apply tw-w-full tw-outline-none tw-py-2 tw-bg-transparent tw-text-base tw-border-b tw-border-indigo-500;
     transition: 0.1s border-color ease-in, 0.1s background-color ease-in,
       0.1s color ease-in;
 
     @screen md {
-      @apply tw-text-sm tw-py-1 tw-px-2;
+      @apply tw-text-sm;
     }
 
     &:focus {
-      @apply tw-border-white;
+      @apply tw-border-white tw-bg-indigo-900;
     }
 
     &--disabled {
-      @apply tw-text-white tw-border-white tw-bg-gray-500;
+      @apply tw-text-white tw-border-white;
     }
 
     &--prefix {

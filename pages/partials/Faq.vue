@@ -5,7 +5,6 @@
       <li v-for="item in faq" class="faq__item tw-mt-8 first:tw-mt-0">
         <p class="faq__question">{{ item.question }}</p>
         <span class="faq__answer">
-          ->
           <i>{{ item.answer }}</i>
         </span>
       </li>
@@ -66,23 +65,29 @@ export default {
 
   &__question {
     counter-increment: li;
+    @apply tw-text-purple-500;
 
     &:before {
-      content: counter(li) '. ';
+      content: counter(li, decimal-leading-zero) '. ';
       display: inline-block;
-      @apply tw-mr-3;
+      @apply tw-mr-1 tw-text-white;
     }
   }
 
   &__answer {
-    @apply tw-text-purple-500 tw-tracking-wide tw-leading-loose;
+    @apply tw-text-white tw-tracking-wide tw-leading-loose tw-text-sm;
+
+    &:before {
+      content: '->';
+      @apply tw-text-purple-500 tw-mr-5;
+    }
   }
 
   &__more {
-    @apply tw-text-gray-400 tw-mt-10 tw-inline-block tw-text-sm tw-no-underline;
+    @apply tw-text-purple-500 tw-mt-10 tw-inline-block tw-text-sm tw-no-underline;
     @screen md {
       &:hover {
-        @apply tw-text-gray-300 tw-no-underline;
+        @apply tw-text-purple-400 tw-no-underline;
       }
     }
   }

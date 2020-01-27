@@ -62,7 +62,7 @@ export default {
   }
 
   &__content {
-    @apply tw-border-t tw-border-gray-500 tw-py-8;
+    @apply tw-border-t tw-border-purple-900 tw-py-8;
 
     @screen md {
       width: 100%;

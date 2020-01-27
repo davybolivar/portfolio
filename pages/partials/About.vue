@@ -2,12 +2,12 @@
   <section>
     <h2 class="base-h2">ABOUT</h2>
     <p>
-      My name is Davy Jones Bolivar, and I'm currently working as a Software
-      Front-end Engineer at
+      My name is <mark>Davy Jones Bolivar</mark>, and I'm currently working as a
+      <strong>Software Front-end Engineer</strong> at
       <a href="https://wavecell.com/" target="_">Wavecell, an 8x8 company</a>.
     </p>
     <p>I love developing web applications using Vue, and React!</p>
-    <p>I'm currently residing in Cebu, Philippines.</p>
+    <p>I'm currently based in Cebu, Philippines.</p>
     <div class="socials">
       <a :href="githubUrl" class="socials__item" target="_">
         <i class="socials__icon icon icon-github-alt"></i>

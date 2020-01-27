@@ -29,7 +29,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  background-color: #1a1b1e;
+  background-color: #17151f;
 
   @apply tw-text-base tw-text-white tw-px-5;
 }
@@ -51,12 +51,12 @@ p > a {
 }
 
 mark {
-  @apply tw-text-red-500;
+  @apply tw-text-purple-500;
   background: none;
 }
 
 p {
-  @apply tw-mt-5 tw-leading-loose tw-text-base;
+  @apply tw-mt-5 tw-leading-loose tw-text-base tw-text-gray-200;
 }
 
 .base-h1 {
@@ -86,13 +86,13 @@ p {
     counter-reset: li;
 
     & > li {
-      @apply tw-py-2 tw-text-purple-600 tw-text-lg tw-w-full;
+      @apply tw-py-2 tw-text-white tw-text-lg tw-w-full;
       counter-increment: li;
 
       &:before {
-        content: counter(li) '. ';
+        content: counter(li, decimal-leading-zero) '. ';
         display: inline-block;
-        @apply tw-mr-3;
+        @apply tw-mr-1 tw-text-purple-600;
       }
 
       @screen md {
@@ -105,7 +105,7 @@ p {
     }
 
     & ul {
-      @apply tw-text-white tw-text-base tw-mt-3 tw-flex tw-flex-wrap tw--mx-3;
+      @apply tw-text-gray-200 tw-text-sm tw-mt-3 tw-flex tw-flex-wrap tw--mx-3;
 
       @screen lg {
         @apply tw-block tw-flex-no-wrap;
@@ -116,6 +116,11 @@ p {
 
         @screen lg {
           @apply tw-w-auto;
+        }
+
+        &:before {
+          content: '▹';
+          @apply tw-mr-2 tw-text-purple-500 tw-text-sm;
         }
       }
     }
