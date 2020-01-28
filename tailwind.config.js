@@ -8,10 +8,11 @@ module.exports = {
         wide: '0'
       },
       fontSize: {
-        sm: '.875rem',
-        base: '1.1rem',
-        lg: '1.25rem',
-        xl: '1.35rem'
+        // sm: '.875rem',
+        // base: '1.1rem',
+        // lg: '1.25rem',
+        // xl: '1.35rem',
+        // '6xl': '3.5rem'
       },
       colors: {
         gray: {

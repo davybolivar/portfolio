@@ -91,7 +91,8 @@ export default {
   }
 
   &__field {
-    @apply tw-w-full tw-outline-none tw-py-2 tw-bg-transparent tw-text-base tw-border-b tw-border-indigo-500;
+    @apply tw-w-full tw-outline-none tw-py-2 tw-bg-transparent tw-text-base tw-border-b tw-border-purple-500;
+    border-radius: 0;
     transition: 0.1s border-color ease-in, 0.1s background-color ease-in,
       0.1s color ease-in;
 

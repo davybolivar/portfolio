@@ -3,17 +3,31 @@
     <h2 class="base-h2">CONTACT</h2>
     <div class="contact__container">
       <div class="contact__statement">
-        <h2 class="tw-text-purple-500 tw-font-bold tw-text-3xl md:tw-text-5xl">
+        <h2
+          class="contact__title tw-text-white tw-font-bold tw-text-3xl md:tw-text-5xl glitch"
+          data-text="Get in touch?"
+        >
           Get in touch?
         </h2>
-        <p class="tw-text-md md:tw-text-2xl">
-          I'll try my best to get back to you as soon as possible!
+        <span class="call-gesture tw-text-3xl md:tw-text-5xl">🤙</span>
+        <p>
+          I'll try my best to get back to you as soon as possible! You may reach
+          out to me via my phone or email.
         </p>
-        <img
-          src="~static/images/contact-illustration.png"
-          alt="contact-illustration"
-          class="contact__illustration"
-        />
+        <div class="tw-my-8">
+          <div class="tw-py-1">
+            <i class="icon icon-pin tw-text-purple-500"></i>
+            <address>Cebu, Philippines</address>
+          </div>
+          <div class="tw-py-1">
+            <i class="icon icon-phone tw-text-purple-500"></i>
+            <a href="tel:+639177700058">+63 917 770 0058</a>
+          </div>
+          <div class="tw-py-1">
+            <i class="icon icon-mail tw-text-purple-500"></i>
+            <a href="mailto:davy.bolivar@gmail.com">davy.bolivar@gmail.com</a>
+          </div>
+        </div>
       </div>
       <div class="contact__form">
         <form @submit.prevent="submit" class="tw-mt-6 md:tw-mt-0 tw-w-full">
@@ -22,14 +36,14 @@
             :disabled="loading"
             type="text"
             label="FULL NAME"
-            placeholder="John Doe"
+            placeholder="Mike Wazowski"
           />
           <v-input
             v-model="form.email"
             :disabled="loading"
             type="email"
             label="EMAIL"
-            placeholder="john.doe@gmail.com"
+            placeholder="mike.wazowski@monstersinc.com"
             class="tw-mt-6"
           />
           <v-input
@@ -37,7 +51,7 @@
             :disabled="loading"
             type="textarea"
             label="MESSAGE"
-            placeholder="Hello world..."
+            placeholder="Put that thing back where it came from, or so help me!..."
             class="tw-mt-6"
           />
           <v-button :loading="loading" class="tw-w-full tw-mt-16">
@@ -104,6 +118,11 @@ export default {
       @apply tw-mt-10;
       grid-area: statement;
     }
+  }
+
+  &__title {
+    @apply tw-relative;
+    z-index: 0;
   }
 
   &__illustration {

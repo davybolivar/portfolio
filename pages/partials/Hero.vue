@@ -3,7 +3,7 @@
     <div class="hero__container">
       <h1 class="hero__title base-h1">
         <span :class="[{ wave: !pendingType.length }]">👋</span>
-        <div class="tw-text-gray-300 tw-text-base tw-my-1 tw-font-normal">
+        <div class="tw-text-base tw-my-1 tw-font-normal">
           Hello, My name is
         </div>
         Davy Bolivar
@@ -17,6 +17,9 @@
           >
         </span>
       </h1>
+      <p class="tw-pt-5">
+        Lorem ipsum lorel the quick brown fox jumped voer the lazy moon
+      </p>
     </div>
   </section>
 </template>
@@ -69,43 +72,7 @@ export default {
   }
 
   &__type {
-    @apply tw-text-indigo-400 tw-inline;
-  }
-}
-
-.wave {
-  animation: wave-animation 2.5s infinite;
-  transform-origin: 70% 70%;
-  display: inline-block;
-}
-
-@keyframes wave-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  10% {
-    transform: rotate(-10deg);
-  }
-
-  20% {
-    transform: rotate(12deg);
-  }
-
-  30% {
-    transform: rotate(-10deg);
-  }
-
-  40% {
-    transform: rotate(9deg);
-  }
-
-  50% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
+    @apply tw-text-purple-500 tw-inline;
   }
 }
 

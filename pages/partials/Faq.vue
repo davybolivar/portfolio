@@ -1,12 +1,15 @@
 <template>
-  <section>
+  <section class="faq">
     <h2 class="base-h2">FAQ</h2>
-    <ol class="faq">
-      <li v-for="item in faq" class="faq__item tw-mt-8 first:tw-mt-0">
-        <p class="faq__question">{{ item.question }}</p>
-        <span class="faq__answer">
+    <ol class="base-list base-list--ordered tw-mt-5">
+      <li
+        v-for="item in faq"
+        class="base-list__item base-list__item--purple tw-mt-8 first:tw-mt-0"
+      >
+        <span>{{ item.question }}</span>
+        <div class="faq__answer">
           <i>{{ item.answer }}</i>
-        </span>
+        </div>
       </li>
     </ol>
     <a href="#contact" class="faq__more">
@@ -56,35 +59,17 @@ export default {
 
 <style lang="scss" scoped>
 .faq {
-  @apply tw-list-none;
-  counter-reset: li;
-
-  &__item {
-    @apply relative;
-  }
-
-  &__question {
-    counter-increment: li;
-    @apply tw-text-purple-500;
-
-    &:before {
-      content: counter(li, decimal-leading-zero) '. ';
-      display: inline-block;
-      @apply tw-mr-1 tw-text-white;
-    }
-  }
-
   &__answer {
-    @apply tw-text-white tw-tracking-wide tw-leading-loose tw-text-sm;
+    @apply tw-text-gray-200 tw-tracking-wide tw-leading-loose tw-text-base;
 
     &:before {
       content: '->';
-      @apply tw-text-purple-500 tw-mr-5;
+      @apply tw-text-white tw-mr-3;
     }
   }
 
   &__more {
-    @apply tw-text-purple-500 tw-mt-10 tw-inline-block tw-text-sm tw-no-underline;
+    @apply tw-text-purple-500 tw-mt-10 tw-inline-block tw-text-base tw-no-underline;
     @screen md {
       &:hover {
         @apply tw-text-purple-400 tw-no-underline;

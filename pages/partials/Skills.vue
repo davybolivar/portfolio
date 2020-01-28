@@ -6,7 +6,7 @@
         <v-switcher
           v-model="category"
           :options="categoryList"
-          class="tw-mt-3 md:tw-ml-5 md:tw-mt-0"
+          class="tw-mt-6 md:tw-ml-10 md:tw-mt-0"
         />
       </div>
       <div class="tw-hidden md:tw-block tw-w-64">
@@ -21,23 +21,33 @@
         </v-input>
       </div>
     </div>
-    <div class="tw-mt-5">
+    <div class="tw-mt-6">
       <transition name="fade-up" mode="out-in">
         <div :key="category">
-          <ol v-if="filterList.length" class="base-list base-list--ordered">
-            <li v-for="skill in filterList">
+          <ol
+            v-if="filterList.length"
+            class="base-list base-list--ordered tw--m-2"
+          >
+            <li
+              v-for="skill in filterList"
+              class="base-list__item base-list__item--numbered tw-p-2 tw-w-full md:tw-w-1/2 lg:tw-w-auto lg:tw-mr-12"
+            >
               <span v-html="highlightText(skill.name, filter)"></span>
-              <ul v-if="skill.types && skill.types.length">
+              <ul
+                v-if="skill.types && skill.types.length"
+                class="base-list--small tw--mx-3 tw-mt-3 "
+              >
                 <li
                   v-for="type in skill.types"
                   v-html="highlightText(type, filter)"
+                  class="base-list__item-arrow"
                 ></li>
               </ul>
             </li>
           </ol>
           <div v-else>
-            <span class="tw-text-lg tw-text-gray-400">
-              Oopsie, I don't seem to know
+            <span class="tw-text-base tw-text-gray-400 tw-py-10 tw-block">
+              Hmm, I don't seem to know
               <i class="tw-text-purple-500">"{{ filter }}"</i>...
             </span>
           </div>

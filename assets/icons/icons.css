@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('./icomoon.eot?zf65ai');
-  src:  url('./icomoon.eot?zf65ai#iefix') format('embedded-opentype'),
-    url('./icomoon.ttf?zf65ai') format('truetype'),
-    url('./icomoon.woff?zf65ai') format('woff'),
-    url('./icomoon.svg?zf65ai#icomoon') format('svg');
+  src:  url('./icomoon.eot?w4wyro');
+  src:  url('./icomoon.eot?w4wyro#iefix') format('embedded-opentype'),
+    url('./icomoon.ttf?w4wyro') format('truetype'),
+    url('./icomoon.woff?w4wyro') format('woff'),
+    url('./icomoon.svg?w4wyro#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,21 +25,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-pin:before {
+  content: "\e90a";
+}
+.icon-mail:before {
+  content: "\e903";
+}
+.icon-phone:before {
+  content: "\e906";
+}
 .icon-filter:before {
   content: "\e904";
 }
 .icon-spinner:before {
   content: "\e905";
 }
+.icon-angellist:before {
+  content: "\e907";
+}
+.icon-github:before {
+  content: "\e909";
+}
 .icon-itch:before {
   content: "\e900";
 }
 .icon-linkedin:before {
   content: "\e901";
-}
-.icon-dribbble:before {
-  content: "\e902";
-}
-.icon-github-alt:before {
-  content: "\e903";
 }

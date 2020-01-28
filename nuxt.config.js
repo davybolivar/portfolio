@@ -15,7 +15,8 @@ export default {
     githubUrl: process.env.GITHUB_URL || 'https://github.com/davybolivar',
     linkedinUrl:
       process.env.LINKEDIN_URL || 'https://www.linkedin.com/in/davybolivar',
-    dribbbleUrl: process.env.DRIBBBLE_URL || 'https://dribbble.com/davybolivar',
+    angellistUrl:
+      process.env.ANGELLIST_URL || 'https://angel.co/davy-jones-bolivar',
     itchUrl: process.env.ITCH_URL || 'https://supernaught.itch.io/'
   },
   /*
