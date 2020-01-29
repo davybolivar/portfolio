@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="#about">
     <h2 class="base-h2">ABOUT</h2>
     <p>
       Hello! My name is <mark>Davy Jones Bolivar</mark>, and I'm currently

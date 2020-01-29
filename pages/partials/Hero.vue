@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section id="hero" class="hero">
     <div class="hero__container">
       <h1 class="hero__title base-h1">
         <span :class="[{ wave: !pendingType.length }]">👋</span>

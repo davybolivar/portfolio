@@ -1,5 +1,5 @@
 <template>
-  <section class="faq">
+  <section id="faq" class="faq">
     <h2 class="base-h2">FAQ</h2>
     <ol class="base-list base-list--ordered tw-mt-5">
       <li

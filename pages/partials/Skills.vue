@@ -86,15 +86,17 @@ export default {
 
   computed: {
     filterList() {
-      const sanitizedFilter = this.$sanitize(this.filter).toLowerCase()
+      const sanitizedFilter = this.$sanitize(this.filter).replace(
+        /[+<>*()?]/g,
+        '\\$&'
+      )
       const selectedCategory = this.skills[this.category]
+      const filter = new RegExp(sanitizedFilter, 'i')
       return sanitizedFilter
         ? selectedCategory.filter((s) => {
             return (
-              s.name.toLowerCase().includes(sanitizedFilter) ||
-              this.$sanitize(s.types.join('').toLowerCase()).includes(
-                sanitizedFilter
-              )
+              s.name.match(filter) ||
+              this.$sanitize(s.types.join('')).match(filter)
             )
           })
         : selectedCategory
@@ -115,7 +117,10 @@ export default {
 
   methods: {
     highlightText(str, filter) {
-      const sanitizedFilter = this.$sanitize(filter)
+      const sanitizedFilter = this.$sanitize(filter).replace(
+        /[+<>*()?]/g,
+        '\\$&'
+      )
       const sanitizedString = this.$sanitize(str)
       return sanitizedFilter.length
         ? sanitizedString.replace(
