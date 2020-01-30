@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="footer__container">
-      <span>Handcrafted by me 🍰</span>
+      <span>Handcrafted by Davy Bolivar 🍰</span>
       <div class="socials">
         <a :href="githubUrl" class="socials__item" target="_">
           <i class="socials__icon icon icon-github"></i>
@@ -42,20 +42,23 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  @apply tw-border-t tw-border-purple-900 tw-py-4 tw-w-full tw-mx-auto tw-text-purple-700 tw-text-xs;
+  @apply tw-px-5 tw-text-purple-700 tw-text-xs;
   position: relative;
-  max-width: 1230px;
+  background: #100e15;
 
   @screen md {
     @apply tw-text-sm;
   }
 
   &__container {
-    @apply tw-flex tw-justify-between tw-items-center;
+    max-width: 1230px;
+    @apply tw-flex tw-justify-between tw-items-center tw-w-full tw-mx-auto tw-py-4;
   }
 }
 
 .socials {
+  @apply tw-flex-shrink-0;
+
   &__icon {
     @apply tw-text-2xl;
   }

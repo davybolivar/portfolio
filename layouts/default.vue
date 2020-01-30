@@ -1,7 +1,9 @@
 <template>
   <div>
     <headerComponent />
-    <nuxt />
+    <div class="tw-px-5">
+      <nuxt />
+    </div>
     <footerComponent />
   </div>
 </template>
@@ -31,7 +33,7 @@ html {
   box-sizing: border-box;
   background-color: #17151f;
 
-  @apply tw-text-base tw-text-white tw-px-5;
+  @apply tw-text-base tw-text-white;
   counter-reset: header;
 }
 

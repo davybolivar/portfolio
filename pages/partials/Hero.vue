@@ -3,7 +3,7 @@
     <div class="hero__container">
       <h1 class="hero__title base-h1">
         <span :class="[{ wave: !pendingType.length }]">👋</span>
-        <div class="tw-text-base tw-my-1 tw-font-normal">
+        <div class="tw-text-purple-500 tw-text-base tw-my-1 tw-font-normal">
           Hello, My name is
         </div>
         Davy Bolivar
@@ -35,8 +35,8 @@ export default {
     }
   },
 
-  mounted() {
-    this.typingEffect()
+  async mounted() {
+    await new Promise(() => setTimeout(this.typingEffect, 800))
   },
 
   methods: {
@@ -59,7 +59,7 @@ export default {
 <style lang="scss" scoped>
 .hero {
   &__container {
-    @apply tw-w-full;
+    @apply tw-w-full tw-my-16;
   }
 
   &__title {
@@ -72,15 +72,15 @@ export default {
   }
 
   &__type {
-    @apply tw-text-purple-500 tw-inline;
+    @apply tw-inline tw-text-gray-400;
   }
 }
 
 .cursor {
-  @applytw-text-white tw-inline-block;
+  @apply tw-text-white tw-inline-block;
 
   &--blink {
-    animation: blink-animation 0.35s alternate infinite;
+    animation: blink-animation 0.35s alternate infinite 0.1s;
   }
 }
 

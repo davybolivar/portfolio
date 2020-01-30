@@ -90,7 +90,8 @@ export default {
         /[+<>*()?]/g,
         '\\$&'
       )
-      const selectedCategory = this.skills[this.category]
+      const selectedCategory =
+        this.skills && this.category ? this.skills[this.category] : []
       const filter = new RegExp(sanitizedFilter, 'i')
       return sanitizedFilter
         ? selectedCategory.filter((s) => {
@@ -111,7 +112,7 @@ export default {
   },
 
   created() {
-    this.categoryList = Object.keys(this.skills)
+    this.categoryList = Object.keys(this.skills || {})
     this.category = this.categoryList[0]
   },
 
