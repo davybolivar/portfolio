@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss">
 .container {
-  position: relative;
+  @apply tw-relative;
   max-width: 1230px;
 
   @screen md {

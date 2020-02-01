@@ -20,7 +20,22 @@
         :class="[{ 'burger--open': showSidebar }]"
         class="burger"
       >
-        {{ showSidebar }}
+        <svg
+          :class="[showSidebar && 'hamburger--close']"
+          class="hamburger"
+          viewBox="0 0 100 100"
+          width="30"
+        >
+          <path
+            class="hamburger__line hamburger__line--top"
+            d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"
+          />
+          <path class="hamburger__line" d="m 30,50 h 40" />
+          <path
+            class="hamburger__line hamburger__line--bottom"
+            d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"
+          />
+        </svg>
       </a>
     </div>
     <div
@@ -29,10 +44,15 @@
       class="menu"
     >
       <aside class="menu__sidebar">
-        <ol>
-          <li v-for="nav in navList">
-            <a :href="nav.url" @click="() => (showSidebar = !showSidebar)">
-              {{ nav.text }}
+        <ol class="menu__list">
+          <li v-for="nav in navList" class="menu__item">
+            <a
+              :href="nav.url"
+              @click="() => (showSidebar = !showSidebar)"
+              class="menu__link"
+            >
+              {{ nav.text.toUpperCase() }}
+              <span class="tw-text-purple-500">-></span>
             </a>
           </li>
         </ol>
@@ -153,7 +173,6 @@ body {
 
 <style lang="scss" scoped>
 .header {
-  $this: &;
   @apply tw-px-5 tw-text-sm tw-z-50 tw-sticky tw-top-0 tw-pointer-events-auto;
   margin-bottom: -5.5em;
   display: flex;
@@ -238,7 +257,7 @@ body {
 
 .menu {
   $this: &;
-  @apply tw-flex tw-fixed tw-inset-0 tw-pl-24 tw-pointer-events-none tw-h-screen tw-w-full tw-invisible;
+  @apply tw-flex tw-fixed tw-inset-0 tw-pl-24 tw-pointer-events-none tw-h-screen tw-w-full tw-invisible tw-overflow-hidden;
   -webkit-overflow-scrolling: touch;
 
   @screen md {
@@ -255,9 +274,71 @@ body {
   }
 
   &__sidebar {
-    @apply tw-p-5 tw-w-full tw-flex tw-justify-center tw-items-center tw-bg-purple-900 tw-pointer-events-auto;
+    @apply tw-p-5 tw-w-full tw-flex tw-justify-center tw-items-center tw-bg-indigo-900 tw-pointer-events-auto;
     transform: translateX(100%);
     transition: all 0.2s ease;
+  }
+
+  &__list {
+    @apply tw-w-full;
+    counter-reset: sidenav;
+  }
+
+  &__item {
+    @apply tw-relative tw-border-t tw-border-indigo-700;
+
+    &:first-child {
+      @apply tw-border-t-0;
+    }
+  }
+
+  &__link {
+    @apply tw-block tw-text-white tw-text-center tw-p-5 tw-flex tw-justify-between tw-items-center tw-text-lg tw-pl-10;
+    counter-increment: sidenav;
+
+    &:before {
+      @apply tw-text-purple-500 tw-text-sm tw-absolute tw-top-0 tw-left-0 tw-bottom-0 tw-flex tw-items-center;
+      content: counter(sidenav, decimal-leading-zero) '.';
+    }
+  }
+}
+
+.hamburger {
+  $this: &;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transform: scale(2);
+
+  &__line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: #fff;
+    stroke-width: 2;
+
+    &--top {
+      stroke-dasharray: 40 139;
+    }
+
+    &--bottom {
+      stroke-dasharray: 40 180;
+    }
+  }
+
+  &--close {
+    transform: rotate(45deg) scale(2);
+
+    #{$this}__line--top {
+      stroke-dashoffset: -98px;
+    }
+
+    #{$this}__line--bottom {
+      stroke-dashoffset: -138px;
+    }
   }
 }
 </style>

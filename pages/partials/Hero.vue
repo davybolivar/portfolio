@@ -59,7 +59,7 @@ export default {
 <style lang="scss" scoped>
 .hero {
   &__container {
-    @apply tw-w-full tw-my-16;
+    @apply tw-w-full tw-my-20;
   }
 
   &__title {
