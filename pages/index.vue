@@ -62,9 +62,10 @@ export default {
   }
 
   &__content {
-    @apply tw-border-t tw-border-purple-900 tw-py-8;
+    @apply tw-border-t tw-border-purple-900 tw-py-20;
 
     @screen md {
+      @apply tw-py-20;
       width: 100%;
       grid-area: about;
     }

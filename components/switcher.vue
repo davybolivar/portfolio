@@ -8,12 +8,13 @@
           `switcher__button--${option}`,
           { 'switcher__button--active': option === value }
         ]"
+        :ref="`switcher-${option}`"
         class="switcher__button"
       >
         {{ option.toUpperCase() }}
       </button>
     </div>
-    <span class="switcher__border"></span>
+    <span ref="switcher-border" class="switcher__border"></span>
   </div>
 </template>
 
@@ -50,10 +51,8 @@ export default {
 
   methods: {
     setBorder() {
-      const borderElement = document.querySelector('.switcher__border')
-      const activeButton = document.querySelector(
-        `.switcher__button--${this.value}`
-      )
+      const borderElement = this.$refs['switcher-border']
+      const activeButton = this.$refs[`switcher-${this.value}`][0]
       const { offsetLeft, offsetWidth } = activeButton
       borderElement.style.width = `${offsetWidth + 2}px`
       borderElement.style.transform = `translateX(${offsetLeft - 1}px)`
