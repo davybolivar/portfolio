@@ -67,6 +67,6 @@ export default {
         tailwindcss: join(__dirname, 'tailwind.config.js')
       }
     },
-    analyze: true
+    analyze: false
   }
 }

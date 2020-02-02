@@ -173,13 +173,17 @@ body {
 
 <style lang="scss" scoped>
 .header {
-  @apply tw-px-5 tw-text-sm tw-z-50 tw-sticky tw-top-0 tw-pointer-events-auto;
+  @apply tw-px-5 tw-text-sm tw-z-50 tw-fixed tw-top-0 tw-pointer-events-auto tw-inset-x-0;
   margin-bottom: -5.5em;
   display: flex;
   align-items: center;
   background-color: #17151f;
   transform: translateY(0);
   transition: transform 0.15s ease-in;
+
+  @screen md {
+    @apply tw-sticky;
+  }
 
   &__container {
     @apply tw-py-5 tw-w-full tw-mx-auto tw-flex tw-items-center tw-justify-between;
