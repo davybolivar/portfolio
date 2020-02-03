@@ -1,4 +1,7 @@
 import { join } from 'path'
+import { config } from 'dotenv'
+
+const env = config()
 
 export default {
   mode: 'universal',
@@ -12,6 +15,7 @@ export default {
    ** Environment variables
    */
   env: {
+    ...env.parsed,
     githubUrl: process.env.GITHUB_URL || 'https://github.com/davybolivar',
     linkedinUrl:
       process.env.LINKEDIN_URL || 'https://www.linkedin.com/in/davybolivar',
@@ -30,7 +34,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/sanitize'],
+  plugins: ['~/plugins/sanitize', { src: '~plugins/ga.js', mode: 'client' }],
   /*
    ** Nuxt.js dev-modules
    */
