@@ -42,7 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  @apply tw-px-5 tw-text-purple-700 tw-text-xs;
+  @apply tw-px-5 tw-text-purple-600 tw-text-xs;
   position: relative;
   background: #100e15;
 
