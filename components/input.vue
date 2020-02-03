@@ -1,10 +1,15 @@
 <template>
   <div class="input">
-    <span v-if="label" class="input__label">
+    <label
+      v-if="label"
+      :for="label.toLowerCase().replace(/\s/g, '-')"
+      class="input__label"
+    >
       {{ label }}
-    </span>
+    </label>
     <textarea
       v-if="type.match(/textarea/i)"
+      :id="label.toLowerCase().replace(/\s/g, '-')"
       :type="type"
       :value="value"
       :placeholder="placeholder"
@@ -20,6 +25,7 @@
         <slot name="prefix"></slot>
       </i>
       <input
+        :id="label.toLowerCase().replace(/\s/g, '-')"
         :type="type"
         :value="value"
         :placeholder="placeholder"
