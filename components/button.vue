@@ -1,7 +1,7 @@
 <template>
   <button
     @click="onClick"
-    :class="{ 'button--disabled': loading || disabled }"
+    :class="[{ 'button--disabled': loading || disabled }]"
     class="button"
   >
     <span v-if="loading" class="button__spinner icon-spinner"></span>
@@ -52,6 +52,22 @@ export default {
 
     &:hover {
       @apply tw-bg-gray-600;
+    }
+  }
+
+  &--error {
+    @apply tw-bg-red-600 tw-text-white;
+
+    &:hover {
+      @apply tw-bg-red-500;
+    }
+  }
+
+  &--success {
+    @apply tw-bg-green-500 tw-text-white;
+
+    &:hover {
+      @apply tw-bg-green-600;
     }
   }
 

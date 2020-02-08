@@ -16,6 +16,7 @@
       :disabled="disabled"
       :class="{ 'input__field--disabled': disabled }"
       @input="handleChange"
+      @focus="$emit('focus')"
       rows="9"
       class="input__field input__field--textarea"
     >
@@ -35,6 +36,7 @@
           'input__field--prefix': $slots.prefix
         }"
         @input="handleChange"
+        @focus="$emit('focus')"
         class="input__field"
       />
     </div>

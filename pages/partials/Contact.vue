@@ -34,6 +34,7 @@
           <v-input
             v-model="form.name"
             :disabled="loading"
+            @focus="setFormStatus(0)"
             type="text"
             label="FULL NAME"
             placeholder="Mike Wazowski"
@@ -41,6 +42,7 @@
           <v-input
             v-model="form.email"
             :disabled="loading"
+            @focus="setFormStatus(0)"
             type="email"
             label="EMAIL"
             placeholder="mike.wazowski@monstersinc.com"
@@ -49,15 +51,20 @@
           <v-input
             v-model="form.message"
             :disabled="loading"
+            @focus="setFormStatus(0)"
             type="textarea"
             label="MESSAGE"
             placeholder="Put that thing back where it came from, or so help me!..."
             class="tw-mt-6"
           />
-          <v-button :loading="loading" class="tw-w-full tw-mt-16">
+          <v-button
+            :loading="loading"
+            :class="buttonState.className"
+            class="tw-w-full tw-mt-16"
+          >
             <transition name="fade-up" mode="out-in">
-              <span :key="loading">
-                {{ loading ? 'SENDING...' : 'SEND MESSAGE ->' }}
+              <span :key="status">
+                {{ buttonState.text }}
               </span>
             </transition>
           </v-button>
@@ -68,6 +75,7 @@
 </template>
 
 <script>
+import { mapActions, mapGetters, mapMutations } from 'vuex'
 import Button from '~/components/button'
 import Input from '~/components/input'
 
@@ -81,8 +89,6 @@ export default {
 
   data() {
     return {
-      loading: false,
-
       form: {
         name: '',
         email: '',
@@ -91,9 +97,42 @@ export default {
     }
   },
 
+  computed: {
+    ...mapGetters({
+      loading: 'mailer/getLoading',
+      status: 'mailer/getStatus'
+    }),
+
+    buttonState() {
+      const state = { className: '', text: '' }
+
+      if (!this.loading && this.status === -1) {
+        state.className = 'button--error'
+        state.text = 'ERROR!'
+      } else if (!this.loading && this.status === 1) {
+        state.className = 'button--success'
+        state.text = 'MESSAGE SENT!'
+      } else if (this.loading) {
+        state.text = '...SENDING'
+      } else {
+        state.text = 'SEND MESSAGE ->'
+      }
+
+      return state
+    }
+  },
+
   methods: {
+    ...mapActions({
+      sendEmail: 'mailer/sendEmail'
+    }),
+
+    ...mapMutations({
+      setFormStatus: 'mailer/SET_STATUS'
+    }),
+
     submit() {
-      this.loading = true
+      this.sendEmail(this.form)
     }
   }
 }
