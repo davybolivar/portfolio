@@ -7,7 +7,7 @@
       <a href="https://wavecell.com/" target="_">Wavecell, an 8x8 company</a>.
     </p>
     <p>
-      I mostly worked on web applications that are build with
+      I mostly worked on web applications that are built with
       <strong>React</strong> and <strong>Vue</strong>. I occasionally enjoy
       designing web applications, videogame assets (pixel art) and logos.
     </p>
