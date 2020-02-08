@@ -67,6 +67,17 @@ export default {
 
   head() {
     return {
+      htmlAttrs: {
+        lang: 'en'
+      },
+      title: 'Davy Bolivar',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Davy Jones Bolivar portfolio'
+        }
+      ],
       bodyAttrs: {
         class: this.showSidebar ? 'blur' : ''
       }

@@ -2,26 +2,22 @@
   "code": [
     {
       "name": "JAVASCRIPT",
-      "types": ["ES6+", "Vue", "React", "Vuex", "Redux", "JQuery", "Single-spa", "Node.js"]
+      "types": ["ES6+", "Vue", "React", "Vuex", "Next.js", "Nuxt.js", "JQuery", "Single-spa", "Node.js"]
     },
     {
-      "name": "CSS",
-      "types": ["SCSS", "LESS", "BEM", "SMACSS", "Atomic"]
-    },
-    {
-      "name": "HTML",
-      "types": ["Pug", "EJS"]
-    },
-    {
-      "name": "CMS",
-      "types": ["Gatsby", "Netlify", "Wordpress"]
+      "name": "NODE FRAMEWORK",
+      "types": ["Express", "EggJS", "Koa"]
     },
     {
       "name": "UI LIBRARIES",
       "types": ["Tailwind", "ElementUI", "Ant Design", "SemanticUI", "Bootstrap"]
     },
     {
-      "name": "TOOLS",
+      "name": "CSS",
+      "types": ["SCSS", "LESS", "BEM", "SMACSS", "Atomic"]
+    },
+    {
+      "name": "EDITORS",
       "types": ["VIM", "Sublime Text", "VS Code", "Atom"]
     }
   ],

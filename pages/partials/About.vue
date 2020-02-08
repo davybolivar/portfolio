@@ -6,7 +6,11 @@
       working as a <strong>Software Front-end Engineer</strong> at
       <a href="https://wavecell.com/" target="_">Wavecell, an 8x8 company</a>.
     </p>
-    <p>I love developing web applications using Vue, and React!</p>
+    <p>
+      I mostly worked on web applications that are build with
+      <strong>React</strong> and <strong>Vue</strong>. I occasionally enjoy
+      designing web applications, videogame assets (pixel art) and logos.
+    </p>
     <p>I'm currently based in Cebu, Philippines.</p>
     <div class="socials">
       <a :href="githubUrl" class="socials__item" target="_">

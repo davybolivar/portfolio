@@ -37,7 +37,7 @@
             @focus="setFormStatus(0)"
             type="text"
             label="FULL NAME"
-            placeholder="Mike Wazowski"
+            placeholder="John Doe"
           />
           <v-input
             v-model="form.email"
@@ -45,7 +45,7 @@
             @focus="setFormStatus(0)"
             type="email"
             label="EMAIL"
-            placeholder="mike.wazowski@monstersinc.com"
+            placeholder="john.doe@gmail.com"
             class="tw-mt-6"
           />
           <v-input
@@ -54,7 +54,7 @@
             @focus="setFormStatus(0)"
             type="textarea"
             label="MESSAGE"
-            placeholder="Put that thing back where it came from, or so help me!..."
+            placeholder="Hello world!"
             class="tw-mt-6"
           />
           <v-button

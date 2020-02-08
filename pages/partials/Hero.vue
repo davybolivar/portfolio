@@ -18,7 +18,8 @@
         </span>
       </h1>
       <p class="tw-pt-5">
-        Lorem ipsum lorel the quick brown fox jumped voer the lazy moon
+        I'm currently based in Cebu, Philippines <br />
+        Specializing in building web applications using React and Vue!
       </p>
     </div>
   </section>

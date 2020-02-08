@@ -30,8 +30,8 @@ export default {
     return {
       faq: [
         {
-          question: 'Are you open for job offers?',
-          answer: 'No, Not at the moment.'
+          question: 'Are you interested doing part-time jobs?',
+          answer: 'No, I prefer to focus on my fulltime.'
         },
         {
           question: 'What job positions are you interested in?',

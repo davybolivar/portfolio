@@ -22,9 +22,10 @@ export default {
 
 <style lang="scss">
 html {
-  font-family: 'JetbrainsMono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+  font-family: 'JetbrainsMono', BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-display: swap;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -63,7 +64,7 @@ address {
 }
 
 p {
-  @apply tw-mt-5 tw-leading-normal tw-text-base tw-text-gray-200;
+  @apply tw-mt-5 tw-leading-loose tw-text-base tw-text-gray-200;
 }
 
 .base-h1 {
