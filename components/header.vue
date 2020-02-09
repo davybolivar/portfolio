@@ -5,7 +5,10 @@
         <i class="icon icon-logo"></i>
       </a>
       <nav class="nav">
-        <div v-for="nav in navList" class="nav__container">
+        <div
+          v-for="nav in navList"
+          class="nav-links nav__container tw-invisible"
+        >
           <a
             :href="nav.url"
             :class="[nav.button ? 'nav__link--button' : 'nav__link--numbered']"
@@ -108,8 +111,24 @@ export default {
 
   mounted() {
     this.toggleHeader()
-    window.addEventListener('scroll', this.handleScroll)
     window.addEventListener('resize', this.handleResize)
+    window.addEventListener('scroll', this.handleScroll)
+
+    const scrollOptions = {
+      duration: 600,
+      scale: 1,
+      origin: 'top',
+      distance: '30px',
+      mobile: true,
+      reset: false,
+      cleanup: true,
+      viewFactor: 0.1
+    }
+
+    this.$sr.reveal('.nav-links', {
+      ...scrollOptions,
+      interval: 100
+    })
   },
 
   beforeDestroy() {

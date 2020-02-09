@@ -34,7 +34,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/sanitize', { src: '~plugins/ga.js', mode: 'client' }],
+  plugins: [
+    '~/plugins/sanitize',
+    { src: '~plugins/ga.js', mode: 'client' },
+    { src: '~plugins/vue-scroll-reveal.js', ssr: false }
+  ],
   /*
    ** Nuxt.js dev-modules
    */

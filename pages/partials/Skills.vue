@@ -1,6 +1,6 @@
 <template>
   <section id="skills">
-    <div class="tw-flex tw-justify-between tw-items-center">
+    <div v-scroll-reveal class="tw-flex tw-justify-between tw-items-center">
       <div class="tw-block md:tw-flex md:tw-items-center">
         <h2 class="base-h2">SKILLS</h2>
         <v-switcher
@@ -21,7 +21,7 @@
         </v-input>
       </div>
     </div>
-    <div class="tw-mt-6">
+    <div v-scroll-reveal class="tw-mt-6">
       <transition name="fade-up" mode="out-in">
         <div :key="category">
           <ol

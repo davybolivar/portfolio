@@ -1,7 +1,7 @@
 <template>
-  <section id="contact" class="contact">
-    <h2 class="base-h2">CONTACT</h2>
-    <div class="contact__container">
+  <section id="contact" v-scroll-reveal class="contact">
+    <h2 v-scroll-reveal class="base-h2">CONTACT</h2>
+    <div v-scroll-reveal class="contact__container">
       <div class="contact__statement">
         <h2
           class="contact__title tw-text-white tw-font-bold tw-text-3xl md:tw-text-5xl glitch"
