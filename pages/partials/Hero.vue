@@ -1,7 +1,7 @@
 <template>
   <section id="hero" class="hero">
     <div class="hero__container">
-      <h1 class="hero__title base-h1">
+      <h1 class="hero__title base-h1 bg-red tw-invisible hero-intrvl-reveal">
         <span :class="[{ wave: !pendingType.length }]">👋</span>
         <div class="tw-text-purple-500 tw-text-base tw-my-1 tw-font-normal">
           Hello, My name is
@@ -17,9 +17,8 @@
           >
         </span>
       </h1>
-      <p class="tw-pt-5">
-        I'm currently based in Cebu, Philippines <br />
-        Specializing in building web applications using React and Vue!
+      <p id="hero-subtext" class="tw-pt-5 tw-invisible hero-intrvl-reveal">
+        Specializing on building web applications using React and Vue.
       </p>
     </div>
   </section>
@@ -36,12 +35,36 @@ export default {
     }
   },
 
-  async mounted() {
-    await new Promise(() => setTimeout(this.typingEffect, 800))
+  mounted() {
+    const scrollOptions = {
+      delay: 450,
+      duration: 600,
+      scale: 1,
+      origin: 'bottom',
+      distance: '30px',
+      mobile: true,
+      reset: false,
+      cleanup: true,
+      viewFactor: 0.1
+    }
+
+    this.$sr.reveal('.hero-intrvl-reveal', {
+      ...scrollOptions,
+      interval: 200
+    })
+
+    this.$sr.reveal('#hero-subtext', {
+      ...scrollOptions,
+      origin: 'top',
+      duration: 400,
+      afterReveal: () => {
+        this.typingEffect()
+      }
+    })
   },
 
   methods: {
-    typingEffect(speed = 50) {
+    typingEffect(speed = 25) {
       const str = this.pendingType
       if (str.length) {
         this.typed += !str.charAt(0).match(/\//) ? str.charAt(0) : '</br>'

@@ -1,20 +1,22 @@
 <template>
-  <section id="faq" class="faq">
-    <h2 class="base-h2">FAQ</h2>
-    <ol class="base-list base-list--ordered tw-mt-5">
-      <li
-        v-for="item in faq"
-        class="base-list__item base-list__item--purple tw-mt-8 first:tw-mt-0"
-      >
-        <span>{{ item.question }}</span>
-        <div class="faq__answer">
-          <i>{{ item.answer }}</i>
-        </div>
-      </li>
-    </ol>
-    <a href="#contact" class="faq__more">
-      Have any further questions? ↓
-    </a>
+  <section id="faq" v-scroll-reveal class="faq">
+    <h2 v-scroll-reveal class="base-h2">FAQ</h2>
+    <div v-scroll-reveal>
+      <ol class="base-list base-list--ordered tw-mt-5">
+        <li
+          v-for="item in faq"
+          class="base-list__item base-list__item--purple tw-mt-8 first:tw-mt-0"
+        >
+          <span>{{ item.question }}</span>
+          <div class="faq__answer">
+            <i>{{ item.answer }}</i>
+          </div>
+        </li>
+      </ol>
+      <a href="#contact" class="faq__more">
+        Have any further questions? ↓
+      </a>
+    </div>
   </section>
 </template>
 
