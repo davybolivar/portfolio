@@ -17,7 +17,7 @@
           >
         </span>
       </h1>
-      <p id="hero-subtext" class="tw-pt-5 tw-invisible hero-intrvl-reveal">
+      <p id="hero-subtext" class="tw-invisible hero-intrvl-reveal">
         Specializing on building web applications using React and Vue.
       </p>
     </div>
