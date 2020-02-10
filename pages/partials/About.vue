@@ -5,9 +5,7 @@
       <p>
         Hello! My name is <mark>Davy Jones Bolivar</mark>, and I'm currently
         working as a <strong>Software Front-end Engineer</strong> at
-        <a href="https://wavecell.com/" target="_" aria-label="Wavecell Logo"
-          >Wavecell, an 8x8 company</a
-        >.
+        <a href="https://wavecell.com/" target="_">Wavecell, an 8x8 company</a>.
       </p>
       <p>
         I mostly worked on web applications that are built with

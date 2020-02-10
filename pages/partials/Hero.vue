@@ -18,7 +18,8 @@
         </span>
       </h1>
       <p id="hero-subtext" class="tw-invisible hero-intrvl-reveal">
-        Specializing on building web applications using React and Vue.
+        Specializing on building web applications using
+        <strong>React</strong> and <strong>Vue</strong>.
       </p>
     </div>
   </section>

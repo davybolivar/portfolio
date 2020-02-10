@@ -1,7 +1,7 @@
 <template>
   <header ref="header" :class="toggleClass" class="header header--sticky">
     <div class="header__container">
-      <a href="#hero" class="logo">
+      <a href="#hero" class="logo" aria-label="Website logo">
         <i class="icon icon-logo"></i>
       </a>
       <nav class="nav">
