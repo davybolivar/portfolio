@@ -5,7 +5,9 @@
       <p>
         Hello! My name is <mark>Davy Jones Bolivar</mark>, and I'm currently
         working as a <strong>Software Front-end Engineer</strong> at
-        <a href="https://wavecell.com/" target="_">Wavecell, an 8x8 company</a>.
+        <a href="https://wavecell.com/" target="_" aria-label="Wavecell Logo"
+          >Wavecell, an 8x8 company</a
+        >.
       </p>
       <p>
         I mostly worked on web applications that are built with
@@ -16,16 +18,31 @@
         I'm currently based in Cebu, Philippines.
       </p>
       <div class="socials">
-        <a :href="githubUrl" class="socials__item" target="_">
+        <a
+          :href="githubUrl"
+          class="socials__item"
+          target="_"
+          aria-label="Github"
+        >
           <i class="socials__icon icon icon-github"></i>
         </a>
-        <a :href="linkedinUrl" class="socials__item" target="_">
+        <a
+          :href="linkedinUrl"
+          class="socials__item"
+          target="_"
+          aria-label="LinkedIn"
+        >
           <i class="socials__icon icon icon-linkedin"></i>
         </a>
-        <a :href="angellistUrl" class="socials__item" target="_">
+        <a
+          :href="angellistUrl"
+          class="socials__item"
+          target="_"
+          aria-label="AngelList"
+        >
           <i class="socials__icon icon icon-angellist"></i>
         </a>
-        <a :href="itchUrl" class="socials__item" target="_">
+        <a :href="itchUrl" class="socials__item" target="_" aria-label="ItchIO">
           <i class="socials__icon icon icon-itch"></i>
         </a>
       </div>

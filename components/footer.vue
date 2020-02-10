@@ -3,16 +3,31 @@
     <div class="footer__container">
       <span>Handcrafted by Davy Bolivar 🍰</span>
       <div class="socials">
-        <a :href="githubUrl" class="socials__item" target="_">
+        <a
+          :href="githubUrl"
+          class="socials__item"
+          target="_"
+          aria-label="Github"
+        >
           <i class="socials__icon icon icon-github"></i>
         </a>
-        <a :href="linkedinUrl" class="socials__item" target="_">
+        <a
+          :href="linkedinUrl"
+          class="socials__item"
+          target="_"
+          aria-label="LinkedIn"
+        >
           <i class="socials__icon icon icon-linkedin"></i>
         </a>
-        <a :href="angellistUrl" class="socials__item" target="_">
+        <a
+          :href="angellistUrl"
+          class="socials__item"
+          target="_"
+          aria-label="AngelList"
+        >
           <i class="socials__icon icon icon-angellist"></i>
         </a>
-        <a :href="itchUrl" class="socials__item" target="_">
+        <a :href="itchUrl" class="socials__item" target="_" aria-label="ItchIO">
           <i class="socials__icon icon icon-itch"></i>
         </a>
       </div>
