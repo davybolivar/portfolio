@@ -1,3 +1,3 @@
-# Portfolio
+# davybolivar
 
-davybolivar.com
+My portfolio created with Nuxt.js
