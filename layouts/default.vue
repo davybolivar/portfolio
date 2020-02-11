@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss">
 html {
-  font-family: 'JetbrainsMono', Cascadia, Menlo, BlinkMacSystemFont, 'Segoe UI',
+  font-family: 'JetbrainsMono', Cascadia, Monaco, BlinkMacSystemFont, 'Segoe UI',
     'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif;
   font-display: swap;
