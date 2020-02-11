@@ -30,45 +30,66 @@
         </div>
       </div>
       <div class="contact__form">
-        <form @submit.prevent="submit" class="tw-mt-6 md:tw-mt-0 tw-w-full">
-          <v-input
-            v-model="form.name"
-            :disabled="loading"
-            @focus="setFormStatus(0)"
-            type="text"
-            label="FULL NAME"
-            placeholder="John Doe"
-          />
-          <v-input
-            v-model="form.email"
-            :disabled="loading"
-            @focus="setFormStatus(0)"
-            type="email"
-            label="EMAIL"
-            placeholder="john.doe@gmail.com"
-            class="tw-mt-6"
-          />
-          <v-input
-            v-model="form.message"
-            :disabled="loading"
-            @focus="setFormStatus(0)"
-            type="textarea"
-            label="MESSAGE"
-            placeholder="Hello world!"
-            class="tw-mt-6"
-          />
-          <v-button
-            :loading="loading"
-            :class="buttonState.className"
-            class="tw-w-full tw-mt-16"
+        <ValidationObserver v-slot="{ invalid }" slim>
+          <form
+            @submit.prevent="submit(invalid)"
+            class="tw-mt-6 md:tw-mt-0 tw-w-full"
           >
-            <transition name="fade-up" mode="out-in">
-              <span :key="status">
-                {{ buttonState.text }}
-              </span>
-            </transition>
-          </v-button>
-        </form>
+            <ValidationProvider
+              v-slot="{ errors }"
+              rules="required|min:2|max:40"
+            >
+              <v-input
+                v-model="form.name"
+                :disabled="loading"
+                :error="errors[0]"
+                @focus="setFormStatus(0)"
+                type="text"
+                label="FULL NAME"
+                placeholder="John Doe"
+              />
+            </ValidationProvider>
+            <ValidationProvider v-slot="{ errors }" rules="required|email">
+              <v-input
+                v-model="form.email"
+                :disabled="loading"
+                :error="errors[0]"
+                @focus="setFormStatus(0)"
+                type="email"
+                label="EMAIL"
+                placeholder="john.doe@gmail.com"
+                class="tw-mt-6"
+              />
+            </ValidationProvider>
+            <ValidationProvider
+              v-slot="{ errors }"
+              rules="required|min:5|max:1000"
+            >
+              <v-input
+                v-model="form.message"
+                :disabled="loading"
+                :error="errors[0]"
+                @focus="setFormStatus(0)"
+                type="textarea"
+                label="MESSAGE"
+                placeholder="Hello world!"
+                class="tw-mt-6"
+              />
+            </ValidationProvider>
+            <v-button
+              :loading="loading"
+              :class="buttonState.className"
+              :disabled="invalid"
+              class="tw-w-full tw-mt-16"
+            >
+              <transition name="fade-up" mode="out-in">
+                <span :key="status">
+                  {{ buttonState.text }}
+                </span>
+              </transition>
+            </v-button>
+          </form>
+        </ValidationObserver>
       </div>
     </div>
   </section>
@@ -76,6 +97,7 @@
 
 <script>
 import { mapActions, mapGetters, mapMutations } from 'vuex'
+import { ValidationObserver, ValidationProvider } from 'vee-validate'
 import Button from '~/components/button'
 import Input from '~/components/input'
 
@@ -83,6 +105,8 @@ export default {
   name: 'Contact',
 
   components: {
+    ValidationObserver,
+    ValidationProvider,
     'v-button': Button,
     'v-input': Input
   },
@@ -131,8 +155,10 @@ export default {
       setFormStatus: 'mailer/SET_STATUS'
     }),
 
-    submit() {
-      this.sendEmail(this.form)
+    submit(invalid) {
+      if (!invalid) {
+        this.sendEmail(this.form)
+      }
     }
   }
 }

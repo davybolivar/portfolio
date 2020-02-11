@@ -2,6 +2,7 @@
   <button
     @click="onClick"
     :class="[{ 'button--disabled': loading || disabled }]"
+    :disabled="disabled"
     class="button"
   >
     <span v-if="loading" class="button__spinner icon-spinner"></span>

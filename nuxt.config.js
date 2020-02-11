@@ -26,7 +26,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: false,
   /*
    ** Global CSS
    */
@@ -36,6 +36,7 @@ export default {
    */
   plugins: [
     '~/plugins/sanitize',
+    '~/plugins/vee-validate',
     { src: '~plugins/ga.js', mode: 'client' },
     { src: '~plugins/vue-scroll-reveal.js', ssr: false }
   ],
@@ -77,6 +78,7 @@ export default {
         tailwindcss: join(__dirname, 'tailwind.config.js')
       }
     },
-    analyze: false
+    analyze: false,
+    transpile: ['vee-validate/dist/rules']
   }
 }

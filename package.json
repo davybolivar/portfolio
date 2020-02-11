@@ -24,6 +24,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.1",
     "nuxt": "^2.0.0",
+    "vee-validate": "^3.2.4",
     "vue-sanitize": "^0.2.0",
     "vue-scroll-reveal": "^1.0.11"
   },

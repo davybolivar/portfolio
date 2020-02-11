@@ -40,6 +40,7 @@
         class="input__field"
       />
     </div>
+    <small v-if="error" class="input__error-message">{{ error }}</small>
   </div>
 </template>
 
@@ -55,7 +56,17 @@ export default {
 
     type: {
       type: String,
-      default: 'text'
+      default: 'text',
+      validator: (val) => {
+        return [
+          'url',
+          'text',
+          'password',
+          'email',
+          'search',
+          'textarea'
+        ].includes(val)
+      }
     },
 
     placeholder: {
@@ -71,6 +82,11 @@ export default {
     label: {
       type: String,
       default: ''
+    },
+
+    error: {
+      type: String,
+      default: null
     }
   },
 
@@ -82,7 +98,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .input {
   @apply tw-w-full;
 
@@ -124,6 +140,10 @@ export default {
       min-height: 100px;
       max-height: 600px;
     }
+  }
+
+  &__error-message {
+    @apply block pt-2 text-red-500;
   }
 }
 </style>
