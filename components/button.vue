@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .button {
   @apply tw-bg-indigo-500 tw-py-4 tw-px-6 tw-text-sm tw-leading-none tw-rounded-sm tw-flex tw-justify-center tw-items-center tw-font-bold tw-outline-none;
   transition: 0.1s color ease-in, 0.1s background-color ease-in;

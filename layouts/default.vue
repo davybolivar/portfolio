@@ -67,6 +67,13 @@ p {
   @apply tw-mt-5 tw-leading-loose tw-text-base tw-text-gray-200;
 }
 
+.mega-h1 {
+  @apply tw-text-6xl tw-font-bold tw-tracking-wide tw-leading-tight;
+  @screen md {
+    font-size: 18em;
+  }
+}
+
 .base-h1 {
   @apply tw-text-4xl tw-font-bold tw-tracking-wide tw-leading-tight;
   @screen md {
